@@ -6,10 +6,10 @@ data "aws_caller_identity" "current" {}
 
 data "aws_region" "current" {}
 
-variables "service-name" {
-  default = "tfe"
+variable "service-name" {
+  default = "sample"
 }
 
-variables "environment" {
-  default = "staging"
+variable "env-short" {
+  default = "stg"
 }
