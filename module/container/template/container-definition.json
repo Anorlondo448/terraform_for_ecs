@@ -1,0 +1,27 @@
+[
+  {
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/${service-name}-${env-short}",
+        "awslogs-region": "${aws-region}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "portMappings": [
+      {
+        "hostPort": 8080,
+        "protocol": "tcp",
+        "containerPort": 80
+      }
+    ],
+    "cpu": 0,
+    "memoryReservation": 500,
+    "environment": [],
+    "mountPoints": [],
+    "volumesFrom": [],
+    "image": "${account-id}.dkr.ecr.${aws-region}.amazonaws.com/${service-name}:latest",
+    "essential": true,
+    "name": "${service-name}"
+  }
+]
