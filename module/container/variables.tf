@@ -9,3 +9,11 @@ variable "service-name" {
 variable "env-short" {
   type = "string"
 }
+
+variable "account-id" {
+  type = "string"
+}
+
+variable "aws-region" {
+  type = "string"
+}
